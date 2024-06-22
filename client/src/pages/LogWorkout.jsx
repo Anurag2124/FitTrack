@@ -9,7 +9,7 @@ function LogWorkout(){
   async function handleSubmit(workout){
     try{
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:3000/workouts/logWorkout', workout, {
+      await axios.post('https://fittrack-q09o.onrender.com/workouts/logWorkout', workout, {
         headers: {Authorization: `Bearer ${token}`}
       });
       setSubmissionStatus('success')

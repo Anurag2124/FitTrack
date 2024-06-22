@@ -15,7 +15,7 @@ function WorkoutHistory() {
   const fetchWorkoutHistory = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3000/workouts/getWorkoutHistory', {
+      const response = await axios.get('https://fittrack-q09o.onrender.com/workouts/getWorkoutHistory', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setWorkouts(response.data);

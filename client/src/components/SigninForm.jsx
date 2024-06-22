@@ -13,7 +13,7 @@ function SigninForm(){
     event.preventDefault();
 
     try{
-      const response = await axios.post('http://localhost:3000/auth/signin', {username, password});
+      const response = await axios.post('https://fittrack-q09o.onrender.com/auth/signin', {username, password});
       localStorage.setItem('token', response.data.token);
       navigate('/dashboard')
     }catch(error){

@@ -17,7 +17,7 @@ function WorkoutForm({ onSubmit }) {
   const fetchExercises = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3000/exercises/getExercise', {
+      const response = await axios.get('https://fittrack-q09o.onrender.com/exercises/getExercise', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setExerciseOptions(response.data.map(ex => ({ value: ex._id, label: ex.name })));
@@ -30,7 +30,7 @@ function WorkoutForm({ onSubmit }) {
   const fetchPreviousEntries = async (exerciseName) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:3000/workouts/getPreviousEntry/${exerciseName}`, {
+      const response = await axios.get(`https://fittrack-q09o.onrender.com/workouts/getPreviousEntry/${exerciseName}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       return response.data.sets;
@@ -86,7 +86,7 @@ function WorkoutForm({ onSubmit }) {
         try {
           setLoading(true);
           const token = localStorage.getItem('token');
-          const response = await axios.post('http://localhost:3000/exercises/addExercise',
+          const response = await axios.post('https://fittrack-q09o.onrender.com/exercises/addExercise',
             { name: exercise.name },
             { headers: { Authorization: `Bearer ${token}` } }
           );
