@@ -36,7 +36,7 @@ function WorkoutHistory() {
   }
 
   return (
-    <div className='max-w-xl w-96 md:w-full mx-auto mt-20'>
+    <div className='max-w-xl w-96 md:w-full mx-auto mt-20 mb-8'>
       <h2 className='text-2xl font-bold mb-4 mt-2'>Workout History</h2>
       {workouts.length === 0 ? (
         <p>No workouts found.</p>
